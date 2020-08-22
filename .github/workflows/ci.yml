@@ -355,8 +355,8 @@ jobs:
     runs-on: windows-2019
     # We are simulating a user with no cc installed.
     # This way, v's cc detection on Windows is also tested.
-    # env:
-    #   VFLAGS: -cc tcc
+    env:
+      VFLAGS: -l"C:\Program Files\OpenSSL-Win64\include" -L"C:\Program Files\OpenSSL-Win64\lib"
     steps:
     - uses: actions/checkout@v2
     #- uses: actions/setup-node@v1
