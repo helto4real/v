@@ -471,7 +471,7 @@ jobs:
           ../v .
           ../v -autofree .
           cd ..
-
+  # Tests the x.websocket autobahn tests. Performance tests  are disabled
   websocket_autobahn:
     name: Autobahn integrations tests
     runs-on: ubuntu-latest
