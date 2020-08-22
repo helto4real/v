@@ -358,6 +358,8 @@ jobs:
       #- uses: actions/setup-node@v1
       #  with:
       #    node-version: 12.x
+      - name: Install openssl
+        run: choco install --install-directory=C:\openssl openssl
       - name: Build
         # We need to move gcc and msvc, so that V can't find an existing C compiler and downloads tcc
         run: |
@@ -371,8 +373,6 @@ jobs:
         run: |
           .\v.exe setup-freetype
           .\.github\workflows\windows-install-sqlite.bat
-
-          choco install --install-directory=C:\openssl openssl
           ## .\.github\workflows\windows-install-sdl.bat
       - name: Fixed tests
         run: |
