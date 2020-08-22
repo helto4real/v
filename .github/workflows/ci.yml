@@ -352,14 +352,14 @@ jobs:
     # We are simulating a user with no cc installed.
     # This way, v's cc detection on Windows is also tested.
     env:
-      VFLAGS: -cflags '-lC/openssl/include -LC/openssl/lib'
+      VFLAGS: -cflags '-lC/Program\\\ Files/OpenSSL-Win64/include -LC/Program\\\ Files/OpenSSL-Win64/lib'
     steps:
       - uses: actions/checkout@v2
       #- uses: actions/setup-node@v1
       #  with:
       #    node-version: 12.x
       - name: Install openssl
-        run: choco install --install-directory=C:\openssl openssl
+        run: choco install openssl
       - name: Build
         # We need to move gcc and msvc, so that V can't find an existing C compiler and downloads tcc
         run: |
